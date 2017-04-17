@@ -1,0 +1,3344 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://piascikj.github.io/imdone/"
+
+    >imdone (v1.5.6)</a>
+</h1>
+<h4>A task board and wiki in one!</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone">module imdone</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">imdone.</span>_inCache</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.addList">
+            function <span class="apidocSignatureSpan">imdone.</span>addList
+            <span class="apidocSignatureSpan">(name, list, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.addProject">
+            function <span class="apidocSignatureSpan">imdone.</span>addProject
+            <span class="apidocSignatureSpan">(dir, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.addProjectToConfig">
+            function <span class="apidocSignatureSpan">imdone.</span>addProjectToConfig
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.checkCLIService">
+            function <span class="apidocSignatureSpan">imdone.</span>checkCLIService
+            <span class="apidocSignatureSpan">(success, failure)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.cliAddProject">
+            function <span class="apidocSignatureSpan">imdone.</span>cliAddProject
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.cliOpen">
+            function <span class="apidocSignatureSpan">imdone.</span>cliOpen
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.cliRemoveProject">
+            function <span class="apidocSignatureSpan">imdone.</span>cliRemoveProject
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.cliStop">
+            function <span class="apidocSignatureSpan">imdone.</span>cliStop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.doSearch">
+            function <span class="apidocSignatureSpan">imdone.</span>doSearch
+            <span class="apidocSignatureSpan">(name, query, offset, limit)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getConfig">
+            function <span class="apidocSignatureSpan">imdone.</span>getConfig
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getConfigFile">
+            function <span class="apidocSignatureSpan">imdone.</span>getConfigFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getDirs">
+            function <span class="apidocSignatureSpan">imdone.</span>getDirs
+            <span class="apidocSignatureSpan">(_path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getFile">
+            function <span class="apidocSignatureSpan">imdone.</span>getFile
+            <span class="apidocSignatureSpan">(name, _path, line, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getFiles">
+            function <span class="apidocSignatureSpan">imdone.</span>getFiles
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getKanban">
+            function <span class="apidocSignatureSpan">imdone.</span>getKanban
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getProject">
+            function <span class="apidocSignatureSpan">imdone.</span>getProject
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getProjects">
+            function <span class="apidocSignatureSpan">imdone.</span>getProjects
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getRepo">
+            function <span class="apidocSignatureSpan">imdone.</span>getRepo
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.hideList">
+            function <span class="apidocSignatureSpan">imdone.</span>hideList
+            <span class="apidocSignatureSpan">(name, list, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.isInitialized">
+            function <span class="apidocSignatureSpan">imdone.</span>isInitialized
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.md">
+            function <span class="apidocSignatureSpan">imdone.</span>md
+            <span class="apidocSignatureSpan">(name, _path, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.moveList">
+            function <span class="apidocSignatureSpan">imdone.</span>moveList
+            <span class="apidocSignatureSpan">(name, list, pos, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.moveTasks">
+            function <span class="apidocSignatureSpan">imdone.</span>moveTasks
+            <span class="apidocSignatureSpan">(name, tasks, newList, newPos, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.removeFile">
+            function <span class="apidocSignatureSpan">imdone.</span>removeFile
+            <span class="apidocSignatureSpan">(name, _path, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.removeList">
+            function <span class="apidocSignatureSpan">imdone.</span>removeList
+            <span class="apidocSignatureSpan">(name, list, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.removeProject">
+            function <span class="apidocSignatureSpan">imdone.</span>removeProject
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.removeProjectFromConfig">
+            function <span class="apidocSignatureSpan">imdone.</span>removeProjectFromConfig
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.renameList">
+            function <span class="apidocSignatureSpan">imdone.</span>renameList
+            <span class="apidocSignatureSpan">(name, list, newList, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.saveFile">
+            function <span class="apidocSignatureSpan">imdone.</span>saveFile
+            <span class="apidocSignatureSpan">(name, repoId, _path, src, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.server.start">
+            function <span class="apidocSignatureSpan">imdone.</span>server.start
+            <span class="apidocSignatureSpan">(imdone, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.showList">
+            function <span class="apidocSignatureSpan">imdone.</span>showList
+            <span class="apidocSignatureSpan">(name, list, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.start">
+            function <span class="apidocSignatureSpan">imdone.</span>start
+            <span class="apidocSignatureSpan">(dirs, _open, noServer, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.startCLIService">
+            function <span class="apidocSignatureSpan">imdone.</span>startCLIService
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.startFromCLI">
+            function <span class="apidocSignatureSpan">imdone.</span>startFromCLI
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>_args</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>_npmUser</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>_phantomChildren</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>_requested</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>_requiredBy</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>_shrinkwrap</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>author</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>bin</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>bugs</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>dependencies</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>devDependencies</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>directories</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>dist</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>emitter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>engines</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>errors</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>keywords</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>licenses</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>maintainers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>optionalDependencies</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>pause</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>projects</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>repository</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>scripts</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">imdone.</span>server</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>DIR_NOT_FOUND</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>PROJECT_NOT_FOUND</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>_from</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>_id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>_location</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>_nodeVersion</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>_npmVersion</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>_resolved</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>_shasum</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>_spec</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>_where</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>description</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>gitHead</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>homepage</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>main</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>name</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>preferGlobal</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>readme</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>subdomain</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">imdone.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.addList">module imdone.addList</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.addList.addList">
+            function <span class="apidocSignatureSpan">imdone.</span>addList
+            <span class="apidocSignatureSpan">(name, list, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.addProject">module imdone.addProject</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.addProject.addProject">
+            function <span class="apidocSignatureSpan">imdone.</span>addProject
+            <span class="apidocSignatureSpan">(dir, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.addProjectToConfig">module imdone.addProjectToConfig</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.addProjectToConfig.addProjectToConfig">
+            function <span class="apidocSignatureSpan">imdone.</span>addProjectToConfig
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.checkCLIService">module imdone.checkCLIService</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.checkCLIService.checkCLIService">
+            function <span class="apidocSignatureSpan">imdone.</span>checkCLIService
+            <span class="apidocSignatureSpan">(success, failure)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.cliAddProject">module imdone.cliAddProject</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.cliAddProject.cliAddProject">
+            function <span class="apidocSignatureSpan">imdone.</span>cliAddProject
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.cliOpen">module imdone.cliOpen</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.cliOpen.cliOpen">
+            function <span class="apidocSignatureSpan">imdone.</span>cliOpen
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.cliRemoveProject">module imdone.cliRemoveProject</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.cliRemoveProject.cliRemoveProject">
+            function <span class="apidocSignatureSpan">imdone.</span>cliRemoveProject
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.cliStop">module imdone.cliStop</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.cliStop.cliStop">
+            function <span class="apidocSignatureSpan">imdone.</span>cliStop
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.doSearch">module imdone.doSearch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.doSearch.doSearch">
+            function <span class="apidocSignatureSpan">imdone.</span>doSearch
+            <span class="apidocSignatureSpan">(name, query, offset, limit)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.errors">module imdone.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.errors.AbstractError">
+            function <span class="apidocSignatureSpan">imdone.errors.</span>AbstractError
+            <span class="apidocSignatureSpan">(msg, constr)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.getConfig">module imdone.getConfig</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getConfig.getConfig">
+            function <span class="apidocSignatureSpan">imdone.</span>getConfig
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.getConfigFile">module imdone.getConfigFile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getConfigFile.getConfigFile">
+            function <span class="apidocSignatureSpan">imdone.</span>getConfigFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.getDirs">module imdone.getDirs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getDirs.getDirs">
+            function <span class="apidocSignatureSpan">imdone.</span>getDirs
+            <span class="apidocSignatureSpan">(_path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.getFile">module imdone.getFile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getFile.getFile">
+            function <span class="apidocSignatureSpan">imdone.</span>getFile
+            <span class="apidocSignatureSpan">(name, _path, line, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.getFiles">module imdone.getFiles</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getFiles.getFiles">
+            function <span class="apidocSignatureSpan">imdone.</span>getFiles
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.getKanban">module imdone.getKanban</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getKanban.getKanban">
+            function <span class="apidocSignatureSpan">imdone.</span>getKanban
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.getProject">module imdone.getProject</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getProject.getProject">
+            function <span class="apidocSignatureSpan">imdone.</span>getProject
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.getProjects">module imdone.getProjects</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getProjects.getProjects">
+            function <span class="apidocSignatureSpan">imdone.</span>getProjects
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.getRepo">module imdone.getRepo</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.getRepo.getRepo">
+            function <span class="apidocSignatureSpan">imdone.</span>getRepo
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.hideList">module imdone.hideList</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.hideList.hideList">
+            function <span class="apidocSignatureSpan">imdone.</span>hideList
+            <span class="apidocSignatureSpan">(name, list, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.isInitialized">module imdone.isInitialized</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.isInitialized.isInitialized">
+            function <span class="apidocSignatureSpan">imdone.</span>isInitialized
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.md">module imdone.md</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.md.md">
+            function <span class="apidocSignatureSpan">imdone.</span>md
+            <span class="apidocSignatureSpan">(name, _path, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.moveList">module imdone.moveList</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.moveList.moveList">
+            function <span class="apidocSignatureSpan">imdone.</span>moveList
+            <span class="apidocSignatureSpan">(name, list, pos, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.moveTasks">module imdone.moveTasks</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.moveTasks.moveTasks">
+            function <span class="apidocSignatureSpan">imdone.</span>moveTasks
+            <span class="apidocSignatureSpan">(name, tasks, newList, newPos, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.removeFile">module imdone.removeFile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.removeFile.removeFile">
+            function <span class="apidocSignatureSpan">imdone.</span>removeFile
+            <span class="apidocSignatureSpan">(name, _path, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.removeList">module imdone.removeList</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.removeList.removeList">
+            function <span class="apidocSignatureSpan">imdone.</span>removeList
+            <span class="apidocSignatureSpan">(name, list, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.removeProject">module imdone.removeProject</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.removeProject.removeProject">
+            function <span class="apidocSignatureSpan">imdone.</span>removeProject
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.removeProjectFromConfig">module imdone.removeProjectFromConfig</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.removeProjectFromConfig.removeProjectFromConfig">
+            function <span class="apidocSignatureSpan">imdone.</span>removeProjectFromConfig
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.renameList">module imdone.renameList</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.renameList.renameList">
+            function <span class="apidocSignatureSpan">imdone.</span>renameList
+            <span class="apidocSignatureSpan">(name, list, newList, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.saveFile">module imdone.saveFile</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.saveFile.saveFile">
+            function <span class="apidocSignatureSpan">imdone.</span>saveFile
+            <span class="apidocSignatureSpan">(name, repoId, _path, src, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.server">module imdone.server</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.server.start">
+            function <span class="apidocSignatureSpan">imdone.server.</span>start
+            <span class="apidocSignatureSpan">(imdone, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.server.start">module imdone.server.start</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.server.start.start">
+            function <span class="apidocSignatureSpan">imdone.server.</span>start
+            <span class="apidocSignatureSpan">(imdone, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.showList">module imdone.showList</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.showList.showList">
+            function <span class="apidocSignatureSpan">imdone.</span>showList
+            <span class="apidocSignatureSpan">(name, list, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.start">module imdone.start</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.start.start">
+            function <span class="apidocSignatureSpan">imdone.</span>start
+            <span class="apidocSignatureSpan">(dirs, _open, noServer, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.startCLIService">module imdone.startCLIService</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.startCLIService.startCLIService">
+            function <span class="apidocSignatureSpan">imdone.</span>startCLIService
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.imdone.startFromCLI">module imdone.startFromCLI</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.imdone.startFromCLI.startFromCLI">
+            function <span class="apidocSignatureSpan">imdone.</span>startFromCLI
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone" id="apidoc.module.imdone">module imdone</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.addList" id="apidoc.element.imdone.addList">
+        function <span class="apidocSignatureSpan">imdone.</span>addList
+        <span class="apidocSignatureSpan">(name, list, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addList = function (name, list, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  project.addList(list, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.addProject" id="apidoc.element.imdone.addProject">
+        function <span class="apidocSignatureSpan">imdone.</span>addProject
+        <span class="apidocSignatureSpan">(dir, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addProject = function (dir, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var name = dir.replace(/^([A-Za-z]:(\\)?|\/?)/, &#x22;&#x22;).split(path.sep).join(&#x22;-&#x22;);
+  console.log(&#x22;Adding project at:&#x22; + dir);
+  if (imdone.projects[name]) delete imdone.projects[name];
+  if (!fs.existsSync(dir)) wrench.mkdirSyncRecursive(dir);
+  var repo = new Repo(dir);
+  var project = imdone.projects[name] = new Project(tools.user(), name, [repo]);
+  project.on(&#x27;project.initialized&#x27;, function(data) {
+    imdone.emitter.emit(&#x27;project.initialized&#x27;, data);
+  });
+  project.on(&#x27;project.modified&#x27;, function(data) {
+    imdone.emitter.emit(&#x27;project.modified&#x27;, data);
+  });
+  project.on(&#x27;files.processed&#x27;, function(data) {
+    imdone.emitter.emit(&#x27;files.processed&#x27;, data);
+  });
+  project.init(function(err) {
+    if (!err) imdone.addProjectToConfig(dir);
+    cb(err,project);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.addProjectToConfig" id="apidoc.element.imdone.addProjectToConfig">
+        function <span class="apidocSignatureSpan">imdone.</span>addProjectToConfig
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addProjectToConfig = function (dir) {
+  var config = this.getConfig();
+  config.projects = _.without(config.projects, dir);
+  config.projects.push(dir);
+  fs.writeFileSync(this.getConfigFile(), JSON.stringify(config, null, 2));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.checkCLIService" id="apidoc.element.imdone.checkCLIService">
+        function <span class="apidocSignatureSpan">imdone.</span>checkCLIService
+        <span class="apidocSignatureSpan">(success, failure)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkCLIService = function (success, failure) {
+  request.get({
+    url:&#x22;http://localhost:&#x22; + imdone.config.cliPort + &#x22;/cli&#x22;,
+  }, function(error, res, body) {
+    if (!res) {
+      failure();
+    } else {
+      success();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.cliAddProject" id="apidoc.element.imdone.cliAddProject">
+        function <span class="apidocSignatureSpan">imdone.</span>cliAddProject
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cliAddProject = function (dir) {
+  request.post({
+    url:&#x22;http://localhost:&#x22; + imdone.config.cliPort + &#x22;/cli/project&#x22;,
+    json:{cwd:dir}
+  }, function(error, res, body) {
+    if (!res) {
+      console.log(&#x22;failed to add project&#x22;);
+    } else {
+      console.log(&#x27;Added project:&#x27;, body);
+    }
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.cliOpen" id="apidoc.element.imdone.cliOpen">
+        function <span class="apidocSignatureSpan">imdone.</span>cliOpen
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cliOpen = function () {
+  request.post({
+    url:&#x22;http://localhost:&#x22; + imdone.config.cliPort + &#x22;/cli/open&#x22;
+  }, function(error, res, body) {
+    if (!res) {
+      console.log(&#x22;failed to open browser&#x22;);
+    }
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.cliRemoveProject" id="apidoc.element.imdone.cliRemoveProject">
+        function <span class="apidocSignatureSpan">imdone.</span>cliRemoveProject
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cliRemoveProject = function (dir) {
+  request.delete({
+    url:&#x22;http://localhost:&#x22; + imdone.config.cliPort + &#x22;/cli/project&#x22;,
+    json:{cwd:dir}
+  }, function(error, res, body) {
+    if (!res) {
+      console.log(&#x22;failed to remove project&#x22;);
+    } else {
+      console.log(&#x27;Removed project:&#x27;, body.path);
+    }
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.cliStop" id="apidoc.element.imdone.cliStop">
+        function <span class="apidocSignatureSpan">imdone.</span>cliStop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cliStop = function () {
+  request.post({
+    url:&#x22;http://localhost:&#x22; + imdone.config.cliPort + &#x22;/cli/stop&#x22;
+  }, function(error, res, body) {
+    if (!res) {
+      console.log(&#x22;failed to stop imdone service&#x22;);
+    } else {
+      console.log(&#x22;imdone service has been stopped&#x22;);
+    }
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.doSearch" id="apidoc.element.imdone.doSearch">
+        function <span class="apidocSignatureSpan">imdone.</span>doSearch
+        <span class="apidocSignatureSpan">(name, query, offset, limit)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doSearch = function (name, query, offset, limit) {
+  var opts = {project:imdone.getProject(name)};
+  if (query) opts.query = query;
+  if (limit) opts.limit = limit;
+  if (offset) opts.offset = offset;
+  var s = new Search(opts);
+  s.execute();
+  return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getConfig" id="apidoc.element.imdone.getConfig">
+        function <span class="apidocSignatureSpan">imdone.</span>getConfig
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getConfig = function () {
+  var json = fs.readFileSync(this.getConfigFile());
+  return JSON.parse(json);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getConfigFile" id="apidoc.element.imdone.getConfigFile">
+        function <span class="apidocSignatureSpan">imdone.</span>getConfigFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getConfigFile = function () {
+  var dir = path.join(tools.userHome(), &#x27;.imdone&#x27;);
+  if (!fs.existsSync(dir)) wrench.mkdirSyncRecursive(dir);
+
+  var file = path.join(dir, &#x27;config.json&#x27;);
+  if (!fs.existsSync(file)) fs.writeFileSync(file, JSON.stringify({projects:[]}, null, 2));
+
+  return file;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getDirs" id="apidoc.element.imdone.getDirs">
+        function <span class="apidocSignatureSpan">imdone.</span>getDirs
+        <span class="apidocSignatureSpan">(_path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDirs = function (_path) {
+  var files = tree.getFiles(_path);
+  if (files) {
+    return files;
+  } else throw new Error(DIR_NOT_FOUND);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getFile" id="apidoc.element.imdone.getFile">
+        function <span class="apidocSignatureSpan">imdone.</span>getFile
+        <span class="apidocSignatureSpan">(name, _path, line, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFile = function (name, _path, line, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    var repoId = imdone.getRepo(project).getId();
+    var file = project.getFileWithContent(repoId, _path);
+    if (file) {
+      cb(null, {
+          repoId: file.getRepoId(),
+          src:file.getContent(),
+          line:line,
+          lang:file.getLang().name,
+          ext:file.getExt(),
+          project:project.path,
+          path:file.getPath()
+      });
+    } else {
+      project.saveFile(repoId, _path, &#x22;&#x22;, function(err, file) {
+        if (err) return cb(err);
+        cb(null,{
+          repoId: file.getRepoId(),
+          src:&#x22;&#x22;,
+          line:line,
+          lang:file.getLang().name,
+          ext:file.getExt(),
+          project:project.path,
+          path:file.getPath()
+        });
+      });
+    }
+  } else cb(new Error(PROJECT_NOT_FOUND));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getFiles" id="apidoc.element.imdone.getFiles">
+        function <span class="apidocSignatureSpan">imdone.</span>getFiles
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFiles = function (name) {
+  var project = imdone.getProject(name);
+  var files;
+  if (project) {
+    return project.getFileTree(imdone.getRepo(project).getId());
+  } else throw new Error(PROJECT_NOT_FOUND);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getKanban" id="apidoc.element.imdone.getKanban">
+        function <span class="apidocSignatureSpan">imdone.</span>getKanban
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getKanban = function (name) {
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    return {
+      lists: project.getTasks(null, true),
+      readme: imdone.getRepo(project).getDefaultFile()
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getProject" id="apidoc.element.imdone.getProject">
+        function <span class="apidocSignatureSpan">imdone.</span>getProject
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getProject = function (name) {
+  return imdone.projects[name] || undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getProjects" id="apidoc.element.imdone.getProjects">
+        function <span class="apidocSignatureSpan">imdone.</span>getProjects
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getProjects = function () {
+  return _.keys(imdone.projects);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getRepo" id="apidoc.element.imdone.getRepo">
+        function <span class="apidocSignatureSpan">imdone.</span>getRepo
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRepo = function (name) {
+  if (name instanceof Project) return name.getRepos()[0];
+  return imdone.getProject(name).getRepos()[0];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.hideList" id="apidoc.element.imdone.hideList">
+        function <span class="apidocSignatureSpan">imdone.</span>hideList
+        <span class="apidocSignatureSpan">(name, list, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hideList = function (name, list, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    project.hideList(list, cb);
+  } else cb(new Error(PROJECT_NOT_FOUND));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.isInitialized" id="apidoc.element.imdone.isInitialized">
+        function <span class="apidocSignatureSpan">imdone.</span>isInitialized
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isInitialized = function () {
+  return imdone.inititalized;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.md" id="apidoc.element.imdone.md">
+        function <span class="apidocSignatureSpan">imdone.</span>md
+        <span class="apidocSignatureSpan">(name, _path, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">md = function (name, _path, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    var repo = imdone.getRepo(project);
+    repo.md(repo.getFile(_path), cb);
+  } else return cb(&#x22;Project is undefined&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.moveList" id="apidoc.element.imdone.moveList">
+        function <span class="apidocSignatureSpan">imdone.</span>moveList
+        <span class="apidocSignatureSpan">(name, list, pos, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">moveList = function (name, list, pos, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    project.moveList(list, pos, cb);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.moveTasks" id="apidoc.element.imdone.moveTasks">
+        function <span class="apidocSignatureSpan">imdone.</span>moveTasks
+        <span class="apidocSignatureSpan">(name, tasks, newList, newPos, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">moveTasks = function (name, tasks, newList, newPos, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    project.moveTasks(tasks, newList, newPos, cb);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.removeFile" id="apidoc.element.imdone.removeFile">
+        function <span class="apidocSignatureSpan">imdone.</span>removeFile
+        <span class="apidocSignatureSpan">(name, _path, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeFile = function (name, _path, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    var repoId = imdone.getRepo(project).getId();
+    project.deleteFile(repoId, _path, function(err, file) {
+      cb(err, {file:file, deleted:true});
+    });
+  } else cb(new Error(PROJECT_NOT_FOUND));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.removeList" id="apidoc.element.imdone.removeList">
+        function <span class="apidocSignatureSpan">imdone.</span>removeList
+        <span class="apidocSignatureSpan">(name, list, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeList = function (name, list, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    project.removeList(list, cb);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.removeProject" id="apidoc.element.imdone.removeProject">
+        function <span class="apidocSignatureSpan">imdone.</span>removeProject
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeProject = function (name) {
+  console.log(&#x22;Removing project with name:&#x22; + name);
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    var repo = imdone.getRepo(name);
+    this.removeProjectFromConfig(repo.getPath());
+    project.destroy();
+    delete imdone.projects[name];
+  }
+
+  imdone.emitter.emit(&#x22;project.removed&#x22;, {project:name});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.removeProjectFromConfig" id="apidoc.element.imdone.removeProjectFromConfig">
+        function <span class="apidocSignatureSpan">imdone.</span>removeProjectFromConfig
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeProjectFromConfig = function (dir) {
+  var config = this.getConfig();
+  config.projects = _.without(config.projects, dir);
+  fs.writeFileSync(this.getConfigFile(), JSON.stringify(config, null, 2));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.renameList" id="apidoc.element.imdone.renameList">
+        function <span class="apidocSignatureSpan">imdone.</span>renameList
+        <span class="apidocSignatureSpan">(name, list, newList, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">renameList = function (name, list, newList, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    project.renameList(list, newList, cb);
+  } else cb(new Error(PROJECT_NOT_FOUND));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.saveFile" id="apidoc.element.imdone.saveFile">
+        function <span class="apidocSignatureSpan">imdone.</span>saveFile
+        <span class="apidocSignatureSpan">(name, repoId, _path, src, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">saveFile = function (name, repoId, _path, src, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    project.saveFile(repoId, _path, src, cb);
+  } else cb(new Error(PROJECT_NOT_FOUND));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.server.start" id="apidoc.element.imdone.server.start">
+        function <span class="apidocSignatureSpan">imdone.</span>server.start
+        <span class="apidocSignatureSpan">(imdone, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">server.start = function (imdone, callback) {
+  server.imdone = imdone;
+
+  //ARCHIVE:810 migrate to express 3.x &#x3c;https://github.com/visionmedia/express/wiki/Migrating-from-2.x-to-3.x&#x3e;
+  var app = server.app = express();
+  var  xserver = http.createServer(app);
+
+  app.use(cookieParser());
+  app.use(bodyParser());
+
+  //Start the api and static content server
+<span class="apidocCodeCommentSpan">  /*
+    /api/tasks
+    /api/lists
+    /api/projects
+    /api/source
+    /api/files
+  */
+</span>  // ARCHIVE:960 Make sure we&#x27;re restful
+  app.post(&#x22;/api/moveTasks&#x22;, moveTasks);
+  app.post(&#x22;/api/moveList&#x22;, moveList);
+  app.post(&#x22;/api/removeList&#x22;, removeList);
+  app.post(&#x22;/api/renameList&#x22;, renameList);
+  app.post(&#x22;/api/hideList&#x22;, hideList);
+  app.post(&#x22;/api/showList&#x22;, showList);
+  app.get(&#x22;/api/kanban/*&#x22;, getKanban);
+  app.post(&#x22;/api/project/*&#x22;, addProject);
+  app.delete(&#x22;/api/project/*&#x22;, removeProject);
+  app.get(&#x22;/api/projects&#x22;, getProjects);
+  app.get(&#x22;/api/source/*&#x22;, getSource);
+  app.put(&#x22;/api/source/*&#x22;, saveSource);
+  app.del(&#x22;/api/source/*&#x22;, removeSource);
+  app.get(&#x22;/api/files/*&#x22;, getFiles);
+  app.get(&#x22;/api/dirs/*&#x22;, getDirs);
+  app.get(&#x22;/api/search/*&#x22;, doSearch);
+  app.get(&#x22;/api/md/*&#x22;, md);
+  app.post(&#x22;/api/list/:project/:list&#x22;, addList);
+
+  app.get(&#x22;/js/marked.js&#x22;, function(req,res) {
+    log(require.resolve(&#x22;marked&#x22;));
+    res.sendfile(require.resolve(&#x22;marked&#x22;).toString());
+  });
+
+  //Serve static files
+  app.use(express.static(__dirname + &#x27;/../public&#x27;));
+
+
+  //Start the websocket server
+  io = io.listen(xserver);
+
+  io.enable(&#x27;browser client minification&#x27;);  // send minified client
+  io.enable(&#x27;browser client etag&#x27;);          // apply etag caching logic based on version number
+  io.set(&#x27;log level&#x27;, 1);                    // reduce logging
+
+  io.sockets.on(&#x27;connection&#x27;, function(socket) {
+    log(&#x22;connected to:&#x22;, socket);
+    var onProjectModified = function(data) {
+      log(&#x22;emitting:&#x22;, EVENTS.PROJECT_MODIFIED);
+      socket.emit(EVENTS.PROJECT_MODIFIED, data);
+    };
+
+    var onProjectInitialized = function(data) {
+      log(&#x22;emitting:&#x22;, EVENTS.PROJECT_INITIALIZED);
+      socket.emit(EVENTS.PROJECT_INITIALIZED, data);
+    };
+
+    var onProjectRemoved = function(data) {
+      log(&#x22;emitting:&#x22;, EVENTS.PROJECT_REMOVED);
+      socket.emit(EVENTS.PROJECT_REMOVED, data);
+    };
+
+    var onFilesProcessed = function(data) {
+      log(&#x22;emitting:&#x22;, EVENTS.FILES_PROCESSED);
+      socket.emit(EVENTS.FILES_PROCESSED, data);
+    };
+
+    server.imdone.emitter.on(EVENTS.PROJECT_INITIALIZED, onProjectInitialized);
+    server.imdone.emitter.on(EVENTS.PROJECT_REMOVED, onProjectRemoved);
+    server.imdone.emitter.on(EVENTS.PROJECT_MODIFIED, onProjectModified);
+    server.imdone.emitter.on(EVENTS.FILES_PROCESSED, onFilesProcessed);
+
+    // ARCHIVE:310 Remove listeners on disconnect
+    socket.on(&#x27;disconnect&#x27;, function () {
+      log(&#x27;disconnected&#x27;);
+      server.imdone.emitter.removeListener(EVENTS.PROJECT_INITIALIZED, onProjectInitialized);
+      server.imdone.emitter.removeListener(EVENTS.PROJECT_REMOVED, onProjectRemoved);
+      server.imdone.emitter.removeListener(EVENTS.PROJECT_MODIFIED, onProjectModified);
+      server.imdone.emitter.removeListener(EVENTS.FILES_PROCESSED, onFilesProcessed);
+    });
+  });
+
+  if (callback) app.on(&#x27;listening&#x27;, callback);
+  xserver.listen(imdone.config.port);
+
+  //ARCHIVE:410 Move open board to command line option **open**
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.showList" id="apidoc.element.imdone.showList">
+        function <span class="apidocSignatureSpan">imdone.</span>showList
+        <span class="apidocSignatureSpan">(name, list, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">showList = function (name, list, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    project.showList(list, cb);
+  } else cb(new Error(PROJECT_NOT_FOUND));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.start" id="apidoc.element.imdone.start">
+        function <span class="apidocSignatureSpan">imdone.</span>start
+        <span class="apidocSignatureSpan">(dirs, _open, noServer, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (dirs, _open, noServer, cb) {
+  keen.addEvent(&#x22;imdone started&#x22;, {
+    openCLI: _open ? true :false
+  }, function(err, result) {
+
+  });
+
+  if (_.isFunction(noServer)) {
+    cb = noServer;
+    noServer = null;
+  }
+  cb = _.isFunction(cb) ? cb : _.noop;
+
+  if (imdone.isInitialized()) return cb();
+
+  // Merge dirs with dirs in config
+  dirs = _.union(imdone.getConfig().projects, dirs);
+
+  function init() {
+    // DONE:40 Should be able to start without server
+    if (!noServer) server.start(imdone);
+    var funcs = [];
+    _.each(dirs, function(d) {
+      funcs.push(function(cb) { imdone.addProject(d, cb); });
+    });
+    async.parallel(funcs, function(err, result) {
+      log(&#x27;All projects initialized&#x27;);
+      if (_open) open(&#x27;http://localhost:&#x27; + imdone.config.port);
+      imdone.initialized = true;
+      cb(err, result);
+    });
+  }
+
+  if (noServer) init();
+  else {
+    log(&#x27;Begin initializing projects&#x27;);
+    imdone.checkCLIService(function() {
+      console.log(&#x22;iMDone service is already running!&#x22;);
+      if (_open) imdone.cliOpen();
+      cb();
+      _.each(dirs, function(d) {
+        imdone.cliAddProject(d);
+      });
+    }, function() {
+      imdone.startCLIService(function() {
+        init();
+      });
+    });
+
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.startCLIService" id="apidoc.element.imdone.startCLIService">
+        function <span class="apidocSignatureSpan">imdone.</span>startCLIService
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startCLIService = function (callback) {
+  //Start a service on 8899 for cli to interact with
+  //Access imdone data through getters and setters that require project path
+  var app = imdone.cliService = express();
+  var xserver = http.createServer(app);
+  app.use(cookieParser());
+  app.use(bodyParser());
+
+  //Start the api and static content server
+  app.get(&#x22;/cli&#x22;, function(req, res) {
+    res.send({ok:imdone.up});
+  });
+  app.post(&#x22;/cli/project&#x22;, function(req, res) {
+    imdone.addProject(req.body.cwd, function(err, project) {
+      res.send(project.getName());
+    });
+  });
+  app.delete(&#x22;/cli/project&#x22;, function(req, res) {
+    res.send(imdone.removeProject(req.body.cwd));
+  });
+  app.post(&#x22;/cli/stop&#x22;, function(req, res) {
+    res.send({ok:true});
+    process.exit();
+  });
+  app.post(&#x22;/cli/open&#x22;, function(req, res) {
+    open(&#x27;http://localhost:&#x27; + imdone.config.port);
+    res.send({ok:true});
+  });
+
+  xserver.on(&#x27;listening&#x27;, function() {
+    imdone.up = true;
+    if (callback) callback();
+  });
+  xserver.listen(imdone.config.cliPort);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.startFromCLI" id="apidoc.element.imdone.startFromCLI">
+        function <span class="apidocSignatureSpan">imdone.</span>startFromCLI
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startFromCLI = function (dir) {
+  program
+  .usage(&#x22;[options]&#x22;)
+  .version(imdone.version)
+  .option(&#x27;-o, --open&#x27;, &#x27;Open imdone in the default browser&#x27;)
+  .option(&#x27;-s, --stop&#x27;, &#x27;Stop imdone server&#x27;)
+  .option(&#x27;-d, --dirs &#x3c;directories&#x3e;&#x27;, &#x27;A comma separated list of project directories&#x27;, function list(val) {
+    return val.split(&#x27;,&#x27;);
+  });
+
+  program.on(&#x27;--help&#x27;, function(){
+    console.log(&#x27;  Examples:&#x27;);
+    console.log(&#x27;&#x27;);
+    console.log(&#x27;    Open imdone in a browser with the current working directory as the project root&#x27;);
+    console.log(&#x27;&#x27;);
+    console.log(&#x27;    $ imdone -o&#x27;);
+    console.log(&#x27;&#x27;);
+    console.log(&#x27;    Open imdone in a browser with list of project directories&#x27;);
+    console.log(&#x27;&#x27;);
+    console.log(&#x27;    $ imdone -o -d projects/imdone,projects/myproject&#x27;);
+  });
+
+  console.log(&#x22;  _   __  __   _____                         &#x22;);
+  console.log(&#x22; (_) |  \\/  | |  __ \\                        &#x22;);
+  console.log(&#x22;  _  | \\  / | | |  | |   ___    _ __     ___ &#x22;);
+  console.log(&#x22; | | | |\\/| | | |  | |  / _ \\  | &#x27;_ \\   / _ \\&#x22;);
+  console.log(&#x22; | | | |  | | | |__| | | (_) | | | | | |  __/&#x22;);
+  console.log(&#x22; |_| |_|  |_| |_____/   \\___/  |_| |_|  \\___|&#x22;);
+
+  program.parse(process.argv);
+
+  var dirs = _.map(program.dirs || [dir], function(dir) { return path.resolve(dir); } );
+
+  if (program.stop) {
+    imdone.cliStop();
+  } else {
+    imdone.start(dirs, program.open);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.addList" id="apidoc.module.imdone.addList">module imdone.addList</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.addList.addList" id="apidoc.element.imdone.addList.addList">
+        function <span class="apidocSignatureSpan">imdone.</span>addList
+        <span class="apidocSignatureSpan">(name, list, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addList = function (name, list, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  project.addList(list, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.addProject" id="apidoc.module.imdone.addProject">module imdone.addProject</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.addProject.addProject" id="apidoc.element.imdone.addProject.addProject">
+        function <span class="apidocSignatureSpan">imdone.</span>addProject
+        <span class="apidocSignatureSpan">(dir, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addProject = function (dir, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var name = dir.replace(/^([A-Za-z]:(\\)?|\/?)/, &#x22;&#x22;).split(path.sep).join(&#x22;-&#x22;);
+  console.log(&#x22;Adding project at:&#x22; + dir);
+  if (imdone.projects[name]) delete imdone.projects[name];
+  if (!fs.existsSync(dir)) wrench.mkdirSyncRecursive(dir);
+  var repo = new Repo(dir);
+  var project = imdone.projects[name] = new Project(tools.user(), name, [repo]);
+  project.on(&#x27;project.initialized&#x27;, function(data) {
+    imdone.emitter.emit(&#x27;project.initialized&#x27;, data);
+  });
+  project.on(&#x27;project.modified&#x27;, function(data) {
+    imdone.emitter.emit(&#x27;project.modified&#x27;, data);
+  });
+  project.on(&#x27;files.processed&#x27;, function(data) {
+    imdone.emitter.emit(&#x27;files.processed&#x27;, data);
+  });
+  project.init(function(err) {
+    if (!err) imdone.addProjectToConfig(dir);
+    cb(err,project);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.addProjectToConfig" id="apidoc.module.imdone.addProjectToConfig">module imdone.addProjectToConfig</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.addProjectToConfig.addProjectToConfig" id="apidoc.element.imdone.addProjectToConfig.addProjectToConfig">
+        function <span class="apidocSignatureSpan">imdone.</span>addProjectToConfig
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addProjectToConfig = function (dir) {
+  var config = this.getConfig();
+  config.projects = _.without(config.projects, dir);
+  config.projects.push(dir);
+  fs.writeFileSync(this.getConfigFile(), JSON.stringify(config, null, 2));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.checkCLIService" id="apidoc.module.imdone.checkCLIService">module imdone.checkCLIService</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.checkCLIService.checkCLIService" id="apidoc.element.imdone.checkCLIService.checkCLIService">
+        function <span class="apidocSignatureSpan">imdone.</span>checkCLIService
+        <span class="apidocSignatureSpan">(success, failure)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkCLIService = function (success, failure) {
+  request.get({
+    url:&#x22;http://localhost:&#x22; + imdone.config.cliPort + &#x22;/cli&#x22;,
+  }, function(error, res, body) {
+    if (!res) {
+      failure();
+    } else {
+      success();
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.cliAddProject" id="apidoc.module.imdone.cliAddProject">module imdone.cliAddProject</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.cliAddProject.cliAddProject" id="apidoc.element.imdone.cliAddProject.cliAddProject">
+        function <span class="apidocSignatureSpan">imdone.</span>cliAddProject
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cliAddProject = function (dir) {
+  request.post({
+    url:&#x22;http://localhost:&#x22; + imdone.config.cliPort + &#x22;/cli/project&#x22;,
+    json:{cwd:dir}
+  }, function(error, res, body) {
+    if (!res) {
+      console.log(&#x22;failed to add project&#x22;);
+    } else {
+      console.log(&#x27;Added project:&#x27;, body);
+    }
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.cliOpen" id="apidoc.module.imdone.cliOpen">module imdone.cliOpen</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.cliOpen.cliOpen" id="apidoc.element.imdone.cliOpen.cliOpen">
+        function <span class="apidocSignatureSpan">imdone.</span>cliOpen
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cliOpen = function () {
+  request.post({
+    url:&#x22;http://localhost:&#x22; + imdone.config.cliPort + &#x22;/cli/open&#x22;
+  }, function(error, res, body) {
+    if (!res) {
+      console.log(&#x22;failed to open browser&#x22;);
+    }
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.cliRemoveProject" id="apidoc.module.imdone.cliRemoveProject">module imdone.cliRemoveProject</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.cliRemoveProject.cliRemoveProject" id="apidoc.element.imdone.cliRemoveProject.cliRemoveProject">
+        function <span class="apidocSignatureSpan">imdone.</span>cliRemoveProject
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cliRemoveProject = function (dir) {
+  request.delete({
+    url:&#x22;http://localhost:&#x22; + imdone.config.cliPort + &#x22;/cli/project&#x22;,
+    json:{cwd:dir}
+  }, function(error, res, body) {
+    if (!res) {
+      console.log(&#x22;failed to remove project&#x22;);
+    } else {
+      console.log(&#x27;Removed project:&#x27;, body.path);
+    }
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.cliStop" id="apidoc.module.imdone.cliStop">module imdone.cliStop</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.cliStop.cliStop" id="apidoc.element.imdone.cliStop.cliStop">
+        function <span class="apidocSignatureSpan">imdone.</span>cliStop
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cliStop = function () {
+  request.post({
+    url:&#x22;http://localhost:&#x22; + imdone.config.cliPort + &#x22;/cli/stop&#x22;
+  }, function(error, res, body) {
+    if (!res) {
+      console.log(&#x22;failed to stop imdone service&#x22;);
+    } else {
+      console.log(&#x22;imdone service has been stopped&#x22;);
+    }
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.doSearch" id="apidoc.module.imdone.doSearch">module imdone.doSearch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.doSearch.doSearch" id="apidoc.element.imdone.doSearch.doSearch">
+        function <span class="apidocSignatureSpan">imdone.</span>doSearch
+        <span class="apidocSignatureSpan">(name, query, offset, limit)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doSearch = function (name, query, offset, limit) {
+  var opts = {project:imdone.getProject(name)};
+  if (query) opts.query = query;
+  if (limit) opts.limit = limit;
+  if (offset) opts.offset = offset;
+  var s = new Search(opts);
+  s.execute();
+  return s;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.errors" id="apidoc.module.imdone.errors">module imdone.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.errors.AbstractError" id="apidoc.element.imdone.errors.AbstractError">
+        function <span class="apidocSignatureSpan">imdone.errors.</span>AbstractError
+        <span class="apidocSignatureSpan">(msg, constr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">AbstractError = function (msg, constr) {
+  Error.captureStackTrace(this, constr || this);
+  this.message = msg || &#x27;Error&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.getConfig" id="apidoc.module.imdone.getConfig">module imdone.getConfig</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getConfig.getConfig" id="apidoc.element.imdone.getConfig.getConfig">
+        function <span class="apidocSignatureSpan">imdone.</span>getConfig
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getConfig = function () {
+  var json = fs.readFileSync(this.getConfigFile());
+  return JSON.parse(json);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.getConfigFile" id="apidoc.module.imdone.getConfigFile">module imdone.getConfigFile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getConfigFile.getConfigFile" id="apidoc.element.imdone.getConfigFile.getConfigFile">
+        function <span class="apidocSignatureSpan">imdone.</span>getConfigFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getConfigFile = function () {
+  var dir = path.join(tools.userHome(), &#x27;.imdone&#x27;);
+  if (!fs.existsSync(dir)) wrench.mkdirSyncRecursive(dir);
+
+  var file = path.join(dir, &#x27;config.json&#x27;);
+  if (!fs.existsSync(file)) fs.writeFileSync(file, JSON.stringify({projects:[]}, null, 2));
+
+  return file;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.getDirs" id="apidoc.module.imdone.getDirs">module imdone.getDirs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getDirs.getDirs" id="apidoc.element.imdone.getDirs.getDirs">
+        function <span class="apidocSignatureSpan">imdone.</span>getDirs
+        <span class="apidocSignatureSpan">(_path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDirs = function (_path) {
+  var files = tree.getFiles(_path);
+  if (files) {
+    return files;
+  } else throw new Error(DIR_NOT_FOUND);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.getFile" id="apidoc.module.imdone.getFile">module imdone.getFile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getFile.getFile" id="apidoc.element.imdone.getFile.getFile">
+        function <span class="apidocSignatureSpan">imdone.</span>getFile
+        <span class="apidocSignatureSpan">(name, _path, line, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFile = function (name, _path, line, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    var repoId = imdone.getRepo(project).getId();
+    var file = project.getFileWithContent(repoId, _path);
+    if (file) {
+      cb(null, {
+          repoId: file.getRepoId(),
+          src:file.getContent(),
+          line:line,
+          lang:file.getLang().name,
+          ext:file.getExt(),
+          project:project.path,
+          path:file.getPath()
+      });
+    } else {
+      project.saveFile(repoId, _path, &#x22;&#x22;, function(err, file) {
+        if (err) return cb(err);
+        cb(null,{
+          repoId: file.getRepoId(),
+          src:&#x22;&#x22;,
+          line:line,
+          lang:file.getLang().name,
+          ext:file.getExt(),
+          project:project.path,
+          path:file.getPath()
+        });
+      });
+    }
+  } else cb(new Error(PROJECT_NOT_FOUND));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.getFiles" id="apidoc.module.imdone.getFiles">module imdone.getFiles</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getFiles.getFiles" id="apidoc.element.imdone.getFiles.getFiles">
+        function <span class="apidocSignatureSpan">imdone.</span>getFiles
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFiles = function (name) {
+  var project = imdone.getProject(name);
+  var files;
+  if (project) {
+    return project.getFileTree(imdone.getRepo(project).getId());
+  } else throw new Error(PROJECT_NOT_FOUND);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.getKanban" id="apidoc.module.imdone.getKanban">module imdone.getKanban</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getKanban.getKanban" id="apidoc.element.imdone.getKanban.getKanban">
+        function <span class="apidocSignatureSpan">imdone.</span>getKanban
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getKanban = function (name) {
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    return {
+      lists: project.getTasks(null, true),
+      readme: imdone.getRepo(project).getDefaultFile()
+    };
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.getProject" id="apidoc.module.imdone.getProject">module imdone.getProject</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getProject.getProject" id="apidoc.element.imdone.getProject.getProject">
+        function <span class="apidocSignatureSpan">imdone.</span>getProject
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getProject = function (name) {
+  return imdone.projects[name] || undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.getProjects" id="apidoc.module.imdone.getProjects">module imdone.getProjects</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getProjects.getProjects" id="apidoc.element.imdone.getProjects.getProjects">
+        function <span class="apidocSignatureSpan">imdone.</span>getProjects
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getProjects = function () {
+  return _.keys(imdone.projects);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.getRepo" id="apidoc.module.imdone.getRepo">module imdone.getRepo</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.getRepo.getRepo" id="apidoc.element.imdone.getRepo.getRepo">
+        function <span class="apidocSignatureSpan">imdone.</span>getRepo
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getRepo = function (name) {
+  if (name instanceof Project) return name.getRepos()[0];
+  return imdone.getProject(name).getRepos()[0];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.hideList" id="apidoc.module.imdone.hideList">module imdone.hideList</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.hideList.hideList" id="apidoc.element.imdone.hideList.hideList">
+        function <span class="apidocSignatureSpan">imdone.</span>hideList
+        <span class="apidocSignatureSpan">(name, list, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">hideList = function (name, list, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    project.hideList(list, cb);
+  } else cb(new Error(PROJECT_NOT_FOUND));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.isInitialized" id="apidoc.module.imdone.isInitialized">module imdone.isInitialized</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.isInitialized.isInitialized" id="apidoc.element.imdone.isInitialized.isInitialized">
+        function <span class="apidocSignatureSpan">imdone.</span>isInitialized
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isInitialized = function () {
+  return imdone.inititalized;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.md" id="apidoc.module.imdone.md">module imdone.md</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.md.md" id="apidoc.element.imdone.md.md">
+        function <span class="apidocSignatureSpan">imdone.</span>md
+        <span class="apidocSignatureSpan">(name, _path, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">md = function (name, _path, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    var repo = imdone.getRepo(project);
+    repo.md(repo.getFile(_path), cb);
+  } else return cb(&#x22;Project is undefined&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.moveList" id="apidoc.module.imdone.moveList">module imdone.moveList</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.moveList.moveList" id="apidoc.element.imdone.moveList.moveList">
+        function <span class="apidocSignatureSpan">imdone.</span>moveList
+        <span class="apidocSignatureSpan">(name, list, pos, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">moveList = function (name, list, pos, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    project.moveList(list, pos, cb);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.moveTasks" id="apidoc.module.imdone.moveTasks">module imdone.moveTasks</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.moveTasks.moveTasks" id="apidoc.element.imdone.moveTasks.moveTasks">
+        function <span class="apidocSignatureSpan">imdone.</span>moveTasks
+        <span class="apidocSignatureSpan">(name, tasks, newList, newPos, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">moveTasks = function (name, tasks, newList, newPos, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    project.moveTasks(tasks, newList, newPos, cb);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.removeFile" id="apidoc.module.imdone.removeFile">module imdone.removeFile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.removeFile.removeFile" id="apidoc.element.imdone.removeFile.removeFile">
+        function <span class="apidocSignatureSpan">imdone.</span>removeFile
+        <span class="apidocSignatureSpan">(name, _path, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeFile = function (name, _path, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    var repoId = imdone.getRepo(project).getId();
+    project.deleteFile(repoId, _path, function(err, file) {
+      cb(err, {file:file, deleted:true});
+    });
+  } else cb(new Error(PROJECT_NOT_FOUND));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.removeList" id="apidoc.module.imdone.removeList">module imdone.removeList</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.removeList.removeList" id="apidoc.element.imdone.removeList.removeList">
+        function <span class="apidocSignatureSpan">imdone.</span>removeList
+        <span class="apidocSignatureSpan">(name, list, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeList = function (name, list, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    project.removeList(list, cb);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.removeProject" id="apidoc.module.imdone.removeProject">module imdone.removeProject</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.removeProject.removeProject" id="apidoc.element.imdone.removeProject.removeProject">
+        function <span class="apidocSignatureSpan">imdone.</span>removeProject
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeProject = function (name) {
+  console.log(&#x22;Removing project with name:&#x22; + name);
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    var repo = imdone.getRepo(name);
+    this.removeProjectFromConfig(repo.getPath());
+    project.destroy();
+    delete imdone.projects[name];
+  }
+
+  imdone.emitter.emit(&#x22;project.removed&#x22;, {project:name});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.removeProjectFromConfig" id="apidoc.module.imdone.removeProjectFromConfig">module imdone.removeProjectFromConfig</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.removeProjectFromConfig.removeProjectFromConfig" id="apidoc.element.imdone.removeProjectFromConfig.removeProjectFromConfig">
+        function <span class="apidocSignatureSpan">imdone.</span>removeProjectFromConfig
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeProjectFromConfig = function (dir) {
+  var config = this.getConfig();
+  config.projects = _.without(config.projects, dir);
+  fs.writeFileSync(this.getConfigFile(), JSON.stringify(config, null, 2));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.renameList" id="apidoc.module.imdone.renameList">module imdone.renameList</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.renameList.renameList" id="apidoc.element.imdone.renameList.renameList">
+        function <span class="apidocSignatureSpan">imdone.</span>renameList
+        <span class="apidocSignatureSpan">(name, list, newList, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">renameList = function (name, list, newList, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    project.renameList(list, newList, cb);
+  } else cb(new Error(PROJECT_NOT_FOUND));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.saveFile" id="apidoc.module.imdone.saveFile">module imdone.saveFile</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.saveFile.saveFile" id="apidoc.element.imdone.saveFile.saveFile">
+        function <span class="apidocSignatureSpan">imdone.</span>saveFile
+        <span class="apidocSignatureSpan">(name, repoId, _path, src, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">saveFile = function (name, repoId, _path, src, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    project.saveFile(repoId, _path, src, cb);
+  } else cb(new Error(PROJECT_NOT_FOUND));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.server" id="apidoc.module.imdone.server">module imdone.server</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.server.start" id="apidoc.element.imdone.server.start">
+        function <span class="apidocSignatureSpan">imdone.server.</span>start
+        <span class="apidocSignatureSpan">(imdone, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (imdone, callback) {
+  server.imdone = imdone;
+
+  //ARCHIVE:810 migrate to express 3.x &#x3c;https://github.com/visionmedia/express/wiki/Migrating-from-2.x-to-3.x&#x3e;
+  var app = server.app = express();
+  var  xserver = http.createServer(app);
+
+  app.use(cookieParser());
+  app.use(bodyParser());
+
+  //Start the api and static content server
+<span class="apidocCodeCommentSpan">  /*
+    /api/tasks
+    /api/lists
+    /api/projects
+    /api/source
+    /api/files
+  */
+</span>  // ARCHIVE:960 Make sure we&#x27;re restful
+  app.post(&#x22;/api/moveTasks&#x22;, moveTasks);
+  app.post(&#x22;/api/moveList&#x22;, moveList);
+  app.post(&#x22;/api/removeList&#x22;, removeList);
+  app.post(&#x22;/api/renameList&#x22;, renameList);
+  app.post(&#x22;/api/hideList&#x22;, hideList);
+  app.post(&#x22;/api/showList&#x22;, showList);
+  app.get(&#x22;/api/kanban/*&#x22;, getKanban);
+  app.post(&#x22;/api/project/*&#x22;, addProject);
+  app.delete(&#x22;/api/project/*&#x22;, removeProject);
+  app.get(&#x22;/api/projects&#x22;, getProjects);
+  app.get(&#x22;/api/source/*&#x22;, getSource);
+  app.put(&#x22;/api/source/*&#x22;, saveSource);
+  app.del(&#x22;/api/source/*&#x22;, removeSource);
+  app.get(&#x22;/api/files/*&#x22;, getFiles);
+  app.get(&#x22;/api/dirs/*&#x22;, getDirs);
+  app.get(&#x22;/api/search/*&#x22;, doSearch);
+  app.get(&#x22;/api/md/*&#x22;, md);
+  app.post(&#x22;/api/list/:project/:list&#x22;, addList);
+
+  app.get(&#x22;/js/marked.js&#x22;, function(req,res) {
+    log(require.resolve(&#x22;marked&#x22;));
+    res.sendfile(require.resolve(&#x22;marked&#x22;).toString());
+  });
+
+  //Serve static files
+  app.use(express.static(__dirname + &#x27;/../public&#x27;));
+
+
+  //Start the websocket server
+  io = io.listen(xserver);
+
+  io.enable(&#x27;browser client minification&#x27;);  // send minified client
+  io.enable(&#x27;browser client etag&#x27;);          // apply etag caching logic based on version number
+  io.set(&#x27;log level&#x27;, 1);                    // reduce logging
+
+  io.sockets.on(&#x27;connection&#x27;, function(socket) {
+    log(&#x22;connected to:&#x22;, socket);
+    var onProjectModified = function(data) {
+      log(&#x22;emitting:&#x22;, EVENTS.PROJECT_MODIFIED);
+      socket.emit(EVENTS.PROJECT_MODIFIED, data);
+    };
+
+    var onProjectInitialized = function(data) {
+      log(&#x22;emitting:&#x22;, EVENTS.PROJECT_INITIALIZED);
+      socket.emit(EVENTS.PROJECT_INITIALIZED, data);
+    };
+
+    var onProjectRemoved = function(data) {
+      log(&#x22;emitting:&#x22;, EVENTS.PROJECT_REMOVED);
+      socket.emit(EVENTS.PROJECT_REMOVED, data);
+    };
+
+    var onFilesProcessed = function(data) {
+      log(&#x22;emitting:&#x22;, EVENTS.FILES_PROCESSED);
+      socket.emit(EVENTS.FILES_PROCESSED, data);
+    };
+
+    server.imdone.emitter.on(EVENTS.PROJECT_INITIALIZED, onProjectInitialized);
+    server.imdone.emitter.on(EVENTS.PROJECT_REMOVED, onProjectRemoved);
+    server.imdone.emitter.on(EVENTS.PROJECT_MODIFIED, onProjectModified);
+    server.imdone.emitter.on(EVENTS.FILES_PROCESSED, onFilesProcessed);
+
+    // ARCHIVE:310 Remove listeners on disconnect
+    socket.on(&#x27;disconnect&#x27;, function () {
+      log(&#x27;disconnected&#x27;);
+      server.imdone.emitter.removeListener(EVENTS.PROJECT_INITIALIZED, onProjectInitialized);
+      server.imdone.emitter.removeListener(EVENTS.PROJECT_REMOVED, onProjectRemoved);
+      server.imdone.emitter.removeListener(EVENTS.PROJECT_MODIFIED, onProjectModified);
+      server.imdone.emitter.removeListener(EVENTS.FILES_PROCESSED, onFilesProcessed);
+    });
+  });
+
+  if (callback) app.on(&#x27;listening&#x27;, callback);
+  xserver.listen(imdone.config.port);
+
+  //ARCHIVE:410 Move open board to command line option **open**
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.server.start" id="apidoc.module.imdone.server.start">module imdone.server.start</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.server.start.start" id="apidoc.element.imdone.server.start.start">
+        function <span class="apidocSignatureSpan">imdone.server.</span>start
+        <span class="apidocSignatureSpan">(imdone, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (imdone, callback) {
+  server.imdone = imdone;
+
+  //ARCHIVE:810 migrate to express 3.x &#x3c;https://github.com/visionmedia/express/wiki/Migrating-from-2.x-to-3.x&#x3e;
+  var app = server.app = express();
+  var  xserver = http.createServer(app);
+
+  app.use(cookieParser());
+  app.use(bodyParser());
+
+  //Start the api and static content server
+<span class="apidocCodeCommentSpan">  /*
+    /api/tasks
+    /api/lists
+    /api/projects
+    /api/source
+    /api/files
+  */
+</span>  // ARCHIVE:960 Make sure we&#x27;re restful
+  app.post(&#x22;/api/moveTasks&#x22;, moveTasks);
+  app.post(&#x22;/api/moveList&#x22;, moveList);
+  app.post(&#x22;/api/removeList&#x22;, removeList);
+  app.post(&#x22;/api/renameList&#x22;, renameList);
+  app.post(&#x22;/api/hideList&#x22;, hideList);
+  app.post(&#x22;/api/showList&#x22;, showList);
+  app.get(&#x22;/api/kanban/*&#x22;, getKanban);
+  app.post(&#x22;/api/project/*&#x22;, addProject);
+  app.delete(&#x22;/api/project/*&#x22;, removeProject);
+  app.get(&#x22;/api/projects&#x22;, getProjects);
+  app.get(&#x22;/api/source/*&#x22;, getSource);
+  app.put(&#x22;/api/source/*&#x22;, saveSource);
+  app.del(&#x22;/api/source/*&#x22;, removeSource);
+  app.get(&#x22;/api/files/*&#x22;, getFiles);
+  app.get(&#x22;/api/dirs/*&#x22;, getDirs);
+  app.get(&#x22;/api/search/*&#x22;, doSearch);
+  app.get(&#x22;/api/md/*&#x22;, md);
+  app.post(&#x22;/api/list/:project/:list&#x22;, addList);
+
+  app.get(&#x22;/js/marked.js&#x22;, function(req,res) {
+    log(require.resolve(&#x22;marked&#x22;));
+    res.sendfile(require.resolve(&#x22;marked&#x22;).toString());
+  });
+
+  //Serve static files
+  app.use(express.static(__dirname + &#x27;/../public&#x27;));
+
+
+  //Start the websocket server
+  io = io.listen(xserver);
+
+  io.enable(&#x27;browser client minification&#x27;);  // send minified client
+  io.enable(&#x27;browser client etag&#x27;);          // apply etag caching logic based on version number
+  io.set(&#x27;log level&#x27;, 1);                    // reduce logging
+
+  io.sockets.on(&#x27;connection&#x27;, function(socket) {
+    log(&#x22;connected to:&#x22;, socket);
+    var onProjectModified = function(data) {
+      log(&#x22;emitting:&#x22;, EVENTS.PROJECT_MODIFIED);
+      socket.emit(EVENTS.PROJECT_MODIFIED, data);
+    };
+
+    var onProjectInitialized = function(data) {
+      log(&#x22;emitting:&#x22;, EVENTS.PROJECT_INITIALIZED);
+      socket.emit(EVENTS.PROJECT_INITIALIZED, data);
+    };
+
+    var onProjectRemoved = function(data) {
+      log(&#x22;emitting:&#x22;, EVENTS.PROJECT_REMOVED);
+      socket.emit(EVENTS.PROJECT_REMOVED, data);
+    };
+
+    var onFilesProcessed = function(data) {
+      log(&#x22;emitting:&#x22;, EVENTS.FILES_PROCESSED);
+      socket.emit(EVENTS.FILES_PROCESSED, data);
+    };
+
+    server.imdone.emitter.on(EVENTS.PROJECT_INITIALIZED, onProjectInitialized);
+    server.imdone.emitter.on(EVENTS.PROJECT_REMOVED, onProjectRemoved);
+    server.imdone.emitter.on(EVENTS.PROJECT_MODIFIED, onProjectModified);
+    server.imdone.emitter.on(EVENTS.FILES_PROCESSED, onFilesProcessed);
+
+    // ARCHIVE:310 Remove listeners on disconnect
+    socket.on(&#x27;disconnect&#x27;, function () {
+      log(&#x27;disconnected&#x27;);
+      server.imdone.emitter.removeListener(EVENTS.PROJECT_INITIALIZED, onProjectInitialized);
+      server.imdone.emitter.removeListener(EVENTS.PROJECT_REMOVED, onProjectRemoved);
+      server.imdone.emitter.removeListener(EVENTS.PROJECT_MODIFIED, onProjectModified);
+      server.imdone.emitter.removeListener(EVENTS.FILES_PROCESSED, onFilesProcessed);
+    });
+  });
+
+  if (callback) app.on(&#x27;listening&#x27;, callback);
+  xserver.listen(imdone.config.port);
+
+  //ARCHIVE:410 Move open board to command line option **open**
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.showList" id="apidoc.module.imdone.showList">module imdone.showList</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.showList.showList" id="apidoc.element.imdone.showList.showList">
+        function <span class="apidocSignatureSpan">imdone.</span>showList
+        <span class="apidocSignatureSpan">(name, list, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">showList = function (name, list, cb) {
+  cb = _.isFunction(cb) ? cb : _.noop;
+  var project = imdone.getProject(name);
+  if (project) {
+    if (project.isBusy()) throw new Error(&#x22;Project Busy&#x22;);
+    project.showList(list, cb);
+  } else cb(new Error(PROJECT_NOT_FOUND));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.start" id="apidoc.module.imdone.start">module imdone.start</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.start.start" id="apidoc.element.imdone.start.start">
+        function <span class="apidocSignatureSpan">imdone.</span>start
+        <span class="apidocSignatureSpan">(dirs, _open, noServer, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">start = function (dirs, _open, noServer, cb) {
+  keen.addEvent(&#x22;imdone started&#x22;, {
+    openCLI: _open ? true :false
+  }, function(err, result) {
+
+  });
+
+  if (_.isFunction(noServer)) {
+    cb = noServer;
+    noServer = null;
+  }
+  cb = _.isFunction(cb) ? cb : _.noop;
+
+  if (imdone.isInitialized()) return cb();
+
+  // Merge dirs with dirs in config
+  dirs = _.union(imdone.getConfig().projects, dirs);
+
+  function init() {
+    // DONE:40 Should be able to start without server
+    if (!noServer) server.start(imdone);
+    var funcs = [];
+    _.each(dirs, function(d) {
+      funcs.push(function(cb) { imdone.addProject(d, cb); });
+    });
+    async.parallel(funcs, function(err, result) {
+      log(&#x27;All projects initialized&#x27;);
+      if (_open) open(&#x27;http://localhost:&#x27; + imdone.config.port);
+      imdone.initialized = true;
+      cb(err, result);
+    });
+  }
+
+  if (noServer) init();
+  else {
+    log(&#x27;Begin initializing projects&#x27;);
+    imdone.checkCLIService(function() {
+      console.log(&#x22;iMDone service is already running!&#x22;);
+      if (_open) imdone.cliOpen();
+      cb();
+      _.each(dirs, function(d) {
+        imdone.cliAddProject(d);
+      });
+    }, function() {
+      imdone.startCLIService(function() {
+        init();
+      });
+    });
+
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.startCLIService" id="apidoc.module.imdone.startCLIService">module imdone.startCLIService</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.startCLIService.startCLIService" id="apidoc.element.imdone.startCLIService.startCLIService">
+        function <span class="apidocSignatureSpan">imdone.</span>startCLIService
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startCLIService = function (callback) {
+  //Start a service on 8899 for cli to interact with
+  //Access imdone data through getters and setters that require project path
+  var app = imdone.cliService = express();
+  var xserver = http.createServer(app);
+  app.use(cookieParser());
+  app.use(bodyParser());
+
+  //Start the api and static content server
+  app.get(&#x22;/cli&#x22;, function(req, res) {
+    res.send({ok:imdone.up});
+  });
+  app.post(&#x22;/cli/project&#x22;, function(req, res) {
+    imdone.addProject(req.body.cwd, function(err, project) {
+      res.send(project.getName());
+    });
+  });
+  app.delete(&#x22;/cli/project&#x22;, function(req, res) {
+    res.send(imdone.removeProject(req.body.cwd));
+  });
+  app.post(&#x22;/cli/stop&#x22;, function(req, res) {
+    res.send({ok:true});
+    process.exit();
+  });
+  app.post(&#x22;/cli/open&#x22;, function(req, res) {
+    open(&#x27;http://localhost:&#x27; + imdone.config.port);
+    res.send({ok:true});
+  });
+
+  xserver.on(&#x27;listening&#x27;, function() {
+    imdone.up = true;
+    if (callback) callback();
+  });
+  xserver.listen(imdone.config.cliPort);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.imdone.startFromCLI" id="apidoc.module.imdone.startFromCLI">module imdone.startFromCLI</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.imdone.startFromCLI.startFromCLI" id="apidoc.element.imdone.startFromCLI.startFromCLI">
+        function <span class="apidocSignatureSpan">imdone.</span>startFromCLI
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startFromCLI = function (dir) {
+  program
+  .usage(&#x22;[options]&#x22;)
+  .version(imdone.version)
+  .option(&#x27;-o, --open&#x27;, &#x27;Open imdone in the default browser&#x27;)
+  .option(&#x27;-s, --stop&#x27;, &#x27;Stop imdone server&#x27;)
+  .option(&#x27;-d, --dirs &#x3c;directories&#x3e;&#x27;, &#x27;A comma separated list of project directories&#x27;, function list(val) {
+    return val.split(&#x27;,&#x27;);
+  });
+
+  program.on(&#x27;--help&#x27;, function(){
+    console.log(&#x27;  Examples:&#x27;);
+    console.log(&#x27;&#x27;);
+    console.log(&#x27;    Open imdone in a browser with the current working directory as the project root&#x27;);
+    console.log(&#x27;&#x27;);
+    console.log(&#x27;    $ imdone -o&#x27;);
+    console.log(&#x27;&#x27;);
+    console.log(&#x27;    Open imdone in a browser with list of project directories&#x27;);
+    console.log(&#x27;&#x27;);
+    console.log(&#x27;    $ imdone -o -d projects/imdone,projects/myproject&#x27;);
+  });
+
+  console.log(&#x22;  _   __  __   _____                         &#x22;);
+  console.log(&#x22; (_) |  \\/  | |  __ \\                        &#x22;);
+  console.log(&#x22;  _  | \\  / | | |  | |   ___    _ __     ___ &#x22;);
+  console.log(&#x22; | | | |\\/| | | |  | |  / _ \\  | &#x27;_ \\   / _ \\&#x22;);
+  console.log(&#x22; | | | |  | | | |__| | | (_) | | | | | |  __/&#x22;);
+  console.log(&#x22; |_| |_|  |_| |_____/   \\___/  |_| |_|  \\___|&#x22;);
+
+  program.parse(process.argv);
+
+  var dirs = _.map(program.dirs || [dir], function(dir) { return path.resolve(dir); } );
+
+  if (program.stop) {
+    imdone.cliStop();
+  } else {
+    imdone.start(dirs, program.open);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
